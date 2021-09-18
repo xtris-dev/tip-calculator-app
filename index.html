@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="app.js" defer></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+		/>
+		<title>Tip calculator app challenge</title>
+	</head>
+	<body>
+		<div id="container">
+			<h1>SPLI<br />TTER</h1>
+			<div class="component">
+				<div class="left-col">
+					<div class="bill">
+						<label for="bill">Bill</label>
+						<input
+							type="number"
+							name="bill"
+							id="bill"
+							placeholder="0"
+						/>
+                        <i class='bx bx-dollar'></i>
+					</div>
+					<div class="tip">
+						<p>Select Tip %</p>
+						<div class="tip-grid">
+							<button class="tip-btn" id="5">5%</button>
+							<button class="tip-btn" id="10">10%</button>
+							<button class="tip-btn" id="15">15%</button>
+							<button class="tip-btn" id="25">25%</button>
+							<button class="tip-btn" id="50">50%</button>
+							<input
+								type="number"
+								name="custom"
+								id="custom"
+								placeholder="Custom"
+							/>
+						</div>
+					</div>
+					<div class="people">
+						<label for="people">Number of People</label>
+						<span id="cant-be">Can't be zero</span>
+						<input
+							type="number"
+							name="people"
+							id="people"
+							placeholder="1"
+							value="1"
+							min="1"
+						/>
+                        <i class='bx bxs-user'></i>
+					</div>
+				</div>
+				<div class="right-col">
+					<div class="tip-amount">
+						<h3>Tip Amount<br /><span>/ person</span></h3>
+						<p id="tip-amount">$0.00</p>
+					</div>
+					<div class="total">
+						<h3>Total<br /><span>/ person</span></h3>
+						<p id="total">$0.00</p>
+					</div>
+					<button id="reset">RESET</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

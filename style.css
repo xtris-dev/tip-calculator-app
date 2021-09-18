@@ -1,0 +1,237 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* Variable css */
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    /* Neutral */
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan2: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --light-grayish-cyan2: hsl(189, 41%, 97%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    background-color: var(--light-grayish-cyan);
+}
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== Main css ======== */
+#container  h1 {
+    margin-bottom: 50px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: var(--very-dark-cyan);
+}
+.component {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    width: 800px;
+}
+
+/* Left column */
+.left-col {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 40px;
+}
+label, .tip p {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+}
+.bill input, .people input {
+    width: 100%;
+    background-color: var(--light-grayish-cyan2);
+    color: var(--very-dark-cyan);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+}
+.bill input::placeholder, .people input::placeholder {
+    font-family: 'Space Mono', monospace;
+    text-align: right;
+    font-weight: 700;
+    font-size: 20px;
+}
+i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    color: var(--dark-grayish-cyan2);
+}
+.people, .bill {
+    position: relative;
+}
+/* Tip section grid */
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-top: 15px;
+}
+.tip-grid .tip-btn {
+    background-color: var(--very-dark-cyan);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    transition: .2s ease;
+}
+.tip-grid .tip-btn:hover {
+    background-color: var(--strong-cyan)!important;
+    color: var(--very-dark-cyan)!important;
+}
+.tip-grid input {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--light-grayish-cyan2);
+    transition: .2s ease;
+
+}
+.tip-grid input::placeholder {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    font-size: 20px;
+}
+
+#cant-be {
+    position: absolute;
+    font-size: 13px;
+    color: red;
+    font-weight: 700;
+    right: 0;
+    top: 0;
+    display: none;
+    transition: .2s ease;
+}
+
+
+
+
+
+/* Class Javascript */
+.tip-btn-active {
+    background-color: var(--strong-cyan)!important;
+    color: var(--very-dark-cyan)!important;
+}
+.reset-btn-active {
+    opacity: 1!important;
+}
+.error-input {
+    border: 2px solid #ff2c2c!important;
+    border-radius: 10px;
+}
+.valid-input {
+    border: 2px solid var(--strong-cyan);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* Right Column */
+.right-col {
+    background-color: var(--very-dark-cyan);
+    border-radius: 15px;
+    flex-basis: 50%;
+    padding: 30px;
+}
+.right-col .tip-amount, .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.right-col .tip-amount {
+    margin-bottom: 20px;
+}
+.right-col .tip-amount h3, .total h3 {
+    font-size: 16px;
+}
+.right-col .tip-amount h3 span, .total h3 span {
+    font-size: 13px;
+    color: var(--light-grayish-cyan);
+    font-weight: 400;
+}
+.right-col .tip-amount p, .total p {
+    color: var(--strong-cyan);
+    font-size: 45px;
+    font-weight: 700;
+}
+.right-col #reset {
+    margin-top: 80px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--strong-cyan);
+    opacity: .2;
+}
+
+/* ============ Media queries - Mobile ============= */
+@media screen and (max-width: 805px) {
+    #container {
+        padding: 50px 0;
+    }
+    .component {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        max-width: 90%;
+    }
+    .left-col {
+        flex-basis: auto;
+        padding-right: 0;
+    }
+    .bill {
+        margin-bottom: 30px;
+    }
+    .tip {
+        margin-bottom: 30px;
+    }
+    .people {
+        margin-bottom: 30px;
+    }
+    .right-col .tip-amount p, .total p {
+        font-size: 30px;
+    }
+    .right-col {
+        flex-basis: auto;
+        padding: 20px;
+    }
+}
